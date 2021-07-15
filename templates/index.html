@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+
+<h1>{{ title }}</h1>
+{#{% for i in list %}#}
+{#    {% if i == 1 %}#}
+{#    <a>{{ i }}</a>#}
+{#    {% endif %}#}
+{#{% endfor %}#}
+
+{% for product in product_list %}
+    <span>ID: {{ product.id }}</span><br>
+    <a href="/product/{{ product.id }}">Title: {{ product.title }}</a><br/>
+    <span>Price: {{ product.price }}</span>
+    <hr/>
+{% endfor %}
+</body>
+</html>

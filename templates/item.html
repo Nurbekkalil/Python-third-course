@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+
+    <span>ID: {{ product.id }}</span><br>
+    <a href="/product/{{ product.id }}">Title: {{ product.title }}</a><br/>
+    <span>Price: {{ product.price }}</span>
+    <hr/>
+{#<br>#}
+{#<span>Tags:#}
+{#    {% for tag in product.tags.all %} {{ tag.name }}#}
+{#    {% endfor %}#}
+{#</span>#}
+
+</body>
+</html>
