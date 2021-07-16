@@ -12,4 +12,4 @@ class ProductAdmin(admin.ModelAdmin):
 admin.site.register(Category)
 admin.site.register(Product)
 admin.site.register(Review)
-# admin.site.register(Tags)
+admin.site.register(Tags)
