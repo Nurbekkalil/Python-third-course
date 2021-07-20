@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <title>{{ title }}</title>
 </head>
 <body>
+<img alt="image" style="width: 100px" src="{% static 'exter.png'%}"/>
 
 <h1>{{ title }}</h1>
 {#{% for i in list %}#}
