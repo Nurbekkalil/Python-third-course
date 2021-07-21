@@ -1,19 +1,7 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-</head>
-<body>
-<img alt="image" style="width: 100px" src="{% static 'exter.png'%}"/>
+{% extends 'layout.html' %}
+{% block content %}
 
 <h1>{{ title }}</h1>
-{#{% for i in list %}#}
-{#    {% if i == 1 %}#}
-{#    <a>{{ i }}</a>#}
-{#    {% endif %}#}
-{#{% endfor %}#}
 
 {% for product in product_list %}
     <span>ID: {{ product.id }}</span><br>
@@ -21,5 +9,4 @@
     <span>Price: {{ product.price }}</span>
     <hr/>
 {% endfor %}
-</body>
-</html>
+{% endblock %}
