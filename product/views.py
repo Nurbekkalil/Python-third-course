@@ -9,12 +9,6 @@ def hello_world_view(request):
 
 def main_page_view(request):
     product = Product.objects.all()
-    print(product)
-    for i in product:
-        print('ID:', i.id)
-        print('Title',i.title)
-        print('Price:', i.price)
-        print()
     data = {
         'title': 'Main Page',
         'list': [1, 2, 3, 4],
@@ -25,8 +19,13 @@ def main_page_view(request):
 
 def product_item_view(request, product_id):
     product = Product.objects.get(id=product_id)
+    product_list = Product.objects.all()
+
+
     data = {
         'product': product,
-        'title': product.title
+        'title': product.title,
+        'product_list': product_list
+
     }
     return render(request, 'item.html', context=data)

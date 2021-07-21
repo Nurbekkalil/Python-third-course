@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello_world_view),
     path('', views.main_page_view),
-    path('product/<int:product_id>/', views.product_item_view)
+    path('product/<int:product_id>/', views.product_item_view, name="product")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
