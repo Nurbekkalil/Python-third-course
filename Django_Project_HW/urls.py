@@ -22,6 +22,15 @@ from product import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello_world_view),
+    path('activate/<str:code>/', views.activate),
     path('', views.main_page_view),
+    path('add_product/', views.add_product),
+    path('logout/', views.logout),
+    path('login/', views.login),
+    path('register/', views.register),
+    path('search/', views.search),
+
+
     path('product/<int:product_id>/', views.product_item_view, name="product")
+
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -25,9 +25,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
+      {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href='/add_product/'>Добавить товар</a>
         </li>
+      {% endif%}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Products
@@ -38,18 +40,30 @@
                         {% endfor %}
           </ul>
         </li>
+        {% if user.is_authenticated %}
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a class="nav-link" href="/logout/">Выйти ({{ user }})</a>
         </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="/login/">Войти</a>
+            </li>
+        {% endif %}
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="d-flex" action="/search/" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" name="query" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
+
+<div class='container'>
+
+
 {% block content %}
+
+    </div>
 
 {% endblock %}
 </body>
